@@ -1,0 +1,91 @@
+						O QUE É TYPESCRIPT?
+
+- TS é um superset para a linguagem JavaScript;
+
+- Ou seja, adiciona funções ao JS, como a declaração de tipos de variável;
+
+- Pode ser utilizado com frameworks/libs, como: Express e React;
+
+- Precisa ser compilado em JS, ou seja, não executamos TS;
+
+- Desenvolvido e mantido pela Microsoft;
+
+- Adiciona confiabilidade ao programa (tipos);
+
+- Provê novas funcionalidade a Js, como interfaces;
+
+- Com TS podemos verificar os erros antes da execução do código, ou seja, no desenvolvimento;
+
+- Deixa JS mais explícito, diminuindo a quantidade de bugs;
+
+- Por estes e outros motivos perdemos menos tempo com debug.
+
+						INSTALANDO O TYPESCRIPT
+
+- Para instalar o TypeScript vamos utilizar o npm;
+
+- O nome do pacote é typescript;
+
+- E vamos adicionar de forma global com a flag -g;
+
+- A partir da instalação temos como executar/compilar TS em qualquer local da nossa máquina, com o comando tsc;
+
+- Após a instalação do node, verifique com os comandos: $ node -v e depois $ npm -v
+
+- Para instalar o TS: $ npm i -g typescript
+
+- Depois de instalado o pacote, agora verifique a versão: $ tsc -v
+
+						AGORA MÃO NA MASSA
+
+- Fazer duas pastas padrões que é a deploy chamada de dist e a de desenvolvimento de código se chamará src;
+
+- Na pasta dist fazer um arquivo index.html para abrir no navegador e acompanhar o console.log;
+
+- Criar a estrutura html com a !;
+
+- Mudar o título e acrescentar um subtítulo (h1);
+
+- Acrescentar abaixo de title a tag js: <script src="js/index.js" defer></script> 
+
+--> Essa tag será linkada ao JS depois de sua criação;
+
+- Agora na pasta src vamos criar o arquivo index.ts, e é nesse local que codaremos o TS;
+
+- Assim ele vai virar JS pós codar;
+
+- Basicamente todo projeto de TS necessita de um arquivo de configuração,
+
+- Esse arquivo é para estabelecer algumas mudanças se houver necessidade e sinalizar que existe um projeto TS;
+
+- Utilize o comando tsc --init
+
+- Vai ser criado um arquivo de configuração (tsconfig.json)
+
+- Nele teremos toda as configurações dos arquivos, qual a versão que o código está sendo compilado etc;
+
+- No index.ts podemos desenvolver o nosso código em JS puro;
+
+- Porém, é bom add o TS para ter uma padronização do código;
+
+Trabalharemos com os tipos de variáveis como:
+
+// string, boolean, number, ...
+let x: number = 10;
+
+- Vamos mudar algumas configurações no tsconfig.json:
+
+--> "rootDir": "./src", porque esse é o diretório (src) onde estarei desenvolvendo;
+--> "outDir": "./dist/js", esse é o diretório de saída e encontro o caminho no index.html;
+
+- Depois de reconfigurar vamos rodar o comando: $ tsc
+
+- O que gera uma nova pasta js com arquivo index.js;
+
+- Para gerar a versão mais recente do compilador utilize o "target": "esnext", depois rode o tsc;
+
+- Para compilar automaticamente o código podemos utilizar o comando: $ tsc -w
+
+- Aí qualquer alteração que fizermos no código será refletida automaticamente pelo compilador;
+
+- Para usar os decorators temos que ir no arquivo de configuração e tirar o comentário de "experimentalDecorators": true,
